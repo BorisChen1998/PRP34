@@ -1,0 +1,11 @@
+1. Fixed some serious porblem hiden in last version in group
+
+2. After last updated, program is able to extract steaks from origin image. However, value difference is found. In other word, in original image center of rain steak is 45 while in extracted steak we found its value is 30 or 25
+So, also we are able to identify where are those steaks, subtract failed to eliminate steaks. I recommend to mutiply a factor to fix it.
+
+3. After last update, in order to apply multiple reconstruction, now program is designed to keep rain dic and remove graphic dic. if you find thing works in inverse dircetion, plz modify code at LINE 225.
+if l == 0:     ->     if l == 1:
+
+4. Increment of dic num found not helpful on result. Furthermore, too many dic confuse the classfication system. (60-200 is prefered, normally 100 is great.)
+
+5. Divde pic into several parts found helpful on result improvement. So a batch process needed. 

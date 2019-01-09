@@ -266,7 +266,8 @@ plt.figure('low')
 plt.imshow(low, cmap=plt.cm.gray)
 plt.show()
 
-
+# we assume edge extracted here is rain steak
+# there are two ways to generate graphic edge in high part
 another_edge_by_re = np.subtract(reconstructions, edge)
 another_edge_by_high = np.subtract(high, edge)
 
@@ -276,11 +277,13 @@ plt.figure('another_edge by edge')
 plt.imshow(another_edge_by_high, cmap=plt.cm.gray)
 plt.show()
 
+# To notice you if edge you extracted out is graphic instead of rain
 plt.figure('result edge')
 result = np.add(edge, low)
 plt.imshow(result, cmap=plt.cm.gray)
 plt.imsave('result_edge.png', result,cmap=plt.cm.gray)
 
+# If edge is rain instead of graphic then one of them works
 plt.figure('result reconstruct')
 result = np.add(another_edge_by_re, low)
 plt.imshow(result, cmap=plt.cm.gray)
